@@ -34,12 +34,12 @@ let miembros = { pedro : 35 , ana : 18 , carlos : 43 , juan : 21 , maria : 29 , 
 (function(){
     "use strict"
 
-    let x = 1 , arr = []
+    let x = 1 , arr = [], //faltaba "," para definir también "y"
     y = 2
     arr.push(x,y)
-    let res = arr.forEach(n=>{
+    let res = arr.map( (n,indice)=>{ // faltaba agregar "indice" y cambiar "forEach" por "map", para que res pueda ser un array nuevo
         console.log(`El numero en el indice ${indice} es : ${n}`);
-        res + 1
+        return n + 1 // agregué "return" y cambié "res" por "n", para que res tuviera los valores correctos
     })
     console.log(res) // [2,3]
 })()
